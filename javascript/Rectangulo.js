@@ -48,4 +48,23 @@ class Rectangulo extends Punto
     {
         this.#imagenRelleno = value;
     }
+
+    colisionar(rectangulo2)
+    {
+        let respuesta;
+
+        if ((this.limiteIzq    < rectangulo2.limiteDer) &&
+            (this.limiteDer    > rectangulo2.limiteIzq) &&
+            (this.limiteArriba < rectangulo2.limiteAbajo) &&  
+            (this.limiteAbajo  > rectangulo2.limiteArriba))
+
+        {
+            respuesta = true;
+        }
+        else
+        {
+            respuesta = false;
+        }
+        return respuesta;
+    }
 }
