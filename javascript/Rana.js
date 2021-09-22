@@ -44,7 +44,7 @@ class Rana extends Rectangulo
 
     morir()
     {
-        let = respuesta;
+        let respuesta;
         if(this.#vidas > 0)
         {
             this.#vidas = this.#vidas - 1;
@@ -59,7 +59,7 @@ class Rana extends Rectangulo
 
     juegocompletado()
     {
-        let = respuesta;
+        let respuesta;
         if ((this.#posicionx < 450)&&
             (this.#posicionx > 350)&&
             (this.#posiciony < 100))

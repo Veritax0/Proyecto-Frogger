@@ -7,7 +7,7 @@ class Nenufar extends Rectangulo
 
     mantenerJugador(jugador)
     {
-        let = respuesta;
+        let respuesta;
         if(this.colisionar(jugador))
         {
             respuesta = true;
