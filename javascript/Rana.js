@@ -47,8 +47,8 @@ class Rana extends Rectangulo
         let = respuesta;
         if(this.#vidas > 0)
         {
-            respuesta = false;
             this.#vidas = this.#vidas - 1;
+            respuesta = false;
         }
 
         else
