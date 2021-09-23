@@ -42,6 +42,19 @@ class Rana extends Rectangulo
         this.#posiciony = value;
     }
 
+    dibujarRana(ctx)
+    {
+        let img = new Image();
+        img.src = "images/ranita.png";
+            ctx.drawImage(img,250,550);
+            ctx.beginPath();
+            ctx.fillStyle = img;
+            ctx.fillRect(super.x,super.y,super.ancho,super.alto);
+            ctx.strokeRect(super.x,super.y,super.ancho,super.alto);
+            ctx.closePath();
+        
+    }
+
     morir()
     {
         let respuesta;

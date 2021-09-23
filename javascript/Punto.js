@@ -62,21 +62,21 @@ class Punto
     
     moverArriba ()
     {
-        this.#y += - 10;
+        this.#y += - 50;
     }
 
     moverAbajo ()
     {
-        this.#y += 10;
+        this.#y += 50;
     }
 
     moverIzquierda ()
     {
-        this.#x += - 10;
+        this.#x += - 50;
     }
 
     moverDerecha ()
     {
-        this.#x += 10;
+        this.#x += 50;
     }
 }
