@@ -4,9 +4,9 @@ class Rectangulo extends Punto
     #alto;
     #imagenRelleno;
 
-    constructor(x,y,ancho,alto,imagenRelleno)
+    constructor(x,y,vx,vy,ancho,alto,imagenRelleno)
     {
-        super(x,y);
+        super(x,y,vx,vy);
         this.#ancho = ancho;
         this.#alto = alto;
         this.#imagenRelleno = imagenRelleno;

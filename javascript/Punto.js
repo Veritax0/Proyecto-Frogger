@@ -53,7 +53,7 @@ class Punto
         this.#vy = value;
     }
 
-    mover ()
+    animar ()
     {
         this.#y += this.#vy;
         this.#x += this.#vx;
