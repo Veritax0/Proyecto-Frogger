@@ -26,25 +26,25 @@ setInterval(carros4,intervalo4);
 function carros1()
 {
     let dx = randomNum(4,9);
-    carros.push(new Carro(0,352,dx,0,100,46,"black"));
+    carros.push(new Carro(0,355,dx,0,100,40,"black"));
 }
 
 function carros2()
 {
     let dx = randomNum(4,9);
-    carros.push(new Carro(0,402,dx,0,100,46,"black"));
+    carros.push(new Carro(0,405,dx,0,100,40,"darkgreen"));
 }
 
 function carros3()
 {
     let dx = randomNum(4,9);
-    carros.push(new Carro(0,452,dx,0,100,46,"black"));
+    carros.push(new Carro(0,455,dx,0,100,40,"black"));
 }
 
 function carros4()
 {
     let dx = randomNum(4,9);
-    carros.push(new Carro(0,502,dx,0,100,46,"black"));
+    carros.push(new Carro(0,505,dx,0,100,40,"brown"));
 }
 
 function animar()
