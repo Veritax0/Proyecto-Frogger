@@ -1,8 +1,8 @@
 class Nenufar extends Rectangulo
 {
-    constructor(x,y,ancho,alto,imagenRelleno)
+    constructor(x,y,vx,vy,ancho,alto,imagenRelleno)
     {
-        super(x,y,ancho,alto,imagenRelleno);
+        super(x,y,vx,vy,ancho,alto,imagenRelleno);
     }
 
     mantenerJugador(jugador)

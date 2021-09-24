@@ -5,6 +5,7 @@ let h = miCanvas.clientHeight;
 let body = document.getElementById("body");
 let ranita = new Rana(250,550,50,50,"red");
 let carros = new Array();
+let lilypads = new Array();
 ranita.dibujar(ctx);
 body.addEventListener("keydown", mover);
 window.requestAnimationFrame(animar);
@@ -22,6 +23,19 @@ setInterval(carros1,intervalo1);
 setInterval(carros2,intervalo2);
 setInterval(carros3,intervalo3);
 setInterval(carros4,intervalo4);
+
+function lilypad()
+{
+    lilypads.push(new Nenufar(0,150,0,0,50,50,"darkgreen"));
+    lilypads.push(new Nenufar(200,150,0,0,50,50,"darkgreen"));
+    lilypads.push(new Nenufar(250,150,0,0,50,50,"darkgreen"));
+    lilypads.push(new Nenufar(450,150,0,0,50,50,"darkgreen"));
+    lilypads.push(new Nenufar(550,150,0,0,50,50,"darkgreen"));
+    for (let i = 0; i < lilypads.length; i++) 
+        {
+            lilypads[i].dibujar(ctx);                   
+        }
+}
 
 function carros1()
 {
@@ -58,6 +72,10 @@ function animar()
         {
             carros[i].dibujar(ctx);                   
         }
+    for (let i = 0; i < lilypads.length; i++) 
+        {
+            lilypads[i].dibujar(ctx);                   
+        }
     ranita.dibujar(ctx);
     window.requestAnimationFrame(animar);
 }
@@ -86,6 +104,10 @@ function mover(e)
         for (let i = 0; i < carros.length; i++) 
         {
             carros[i].dibujar(ctx);                   
+        }
+        for (let i = 0; i < lilypads.length; i++) 
+        {
+            lilypads[i].dibujar(ctx);                   
         }
         ranita.dibujar(ctx);
     }
