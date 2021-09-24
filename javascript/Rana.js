@@ -46,7 +46,7 @@ class Rana extends Rectangulo
     {
         let img = new Image();
         img.src = "images/ranita.png";
-            ctx.drawImage(img,250,550);
+            ctx.drawImage(img,super.x,super.y);
             ctx.beginPath();
             ctx.fillStyle = img;
             ctx.fillRect(super.x,super.y,super.ancho,super.alto);
@@ -64,6 +64,7 @@ class Rana extends Rectangulo
 
         else
         {
+            window.alert("Game Over")
             location.reload();
         }
     }

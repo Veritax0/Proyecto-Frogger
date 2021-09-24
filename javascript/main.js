@@ -6,8 +6,8 @@ let body = document.getElementById("body");
 let ranita = new Rana(250,550,50,50,"red");
 let carros = new Array();
 let lilypads = new Array();
-body.addEventListener("keydown", mover);
 window.requestAnimationFrame(animar);
+body.addEventListener("keydown",mover);
 carros1();
 carros2();
 carros3();
@@ -22,6 +22,7 @@ setInterval(carros1,intervalo1);
 setInterval(carros2,intervalo2);
 setInterval(carros3,intervalo3);
 setInterval(carros4,intervalo4);
+
 
 function mostrarRana()
 {
@@ -40,25 +41,25 @@ function lilypad()
 
 function carros1()
 {
-    let dx = randomNum(4,9);
+    let dx = randomNum(4,7);
     carros.push(new Carro(0,355,dx,0,100,40,"black"));
 }
 
 function carros2()
 {
-    let dx = randomNum(4,9);
+    let dx = randomNum(4,7);
     carros.push(new Carro(0,405,dx,0,100,40,"darkgreen"));
 }
 
 function carros3()
 {
-    let dx = randomNum(4,9);
+    let dx = randomNum(4,7);
     carros.push(new Carro(0,455,dx,0,100,40,"black"));
 }
 
 function carros4()
 {
-    let dx = randomNum(4,9);
+    let dx = randomNum(4,7);
     carros.push(new Carro(0,505,dx,0,100,40,"brown"));
 }
 
@@ -69,6 +70,13 @@ function animar()
         {
             carros[i].animar();                   
         }
+    for (let i = 0; i < carros.length; i++)
+    {
+        if(carros[i].colisionar(ranita))
+        {
+            ranita.morir();
+        }
+    }
     for (let i = 0; i < carros.length; i++) 
         {
             carros[i].dibujar(ctx);                   
@@ -77,6 +85,7 @@ function animar()
         {
             lilypads[i].dibujar(ctx);                   
         }
+    document.getElementById("vidas").value = ranita.vidas;
     mostrarRana();
     window.requestAnimationFrame(animar);
 }
