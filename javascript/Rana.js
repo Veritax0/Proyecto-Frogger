@@ -57,16 +57,14 @@ class Rana extends Rectangulo
 
     morir()
     {
-        let respuesta;
         if(this.#vidas > 0)
         {
             this.#vidas = this.#vidas - 1;
-            respuesta = false;
         }
 
         else
         {
-            respuesta = true
+            location.reload();
         }
     }
 

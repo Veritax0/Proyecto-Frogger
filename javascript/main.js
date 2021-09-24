@@ -6,14 +6,13 @@ let body = document.getElementById("body");
 let ranita = new Rana(250,550,50,50,"red");
 let carros = new Array();
 let lilypads = new Array();
-ranita.dibujar(ctx);
 body.addEventListener("keydown", mover);
 window.requestAnimationFrame(animar);
 carros1();
 carros2();
 carros3();
 carros4();
-
+lilypad();
 let intervalo1 = randomNum(1000,3000);
 let intervalo2 = randomNum(1000,3000);
 let intervalo3 = randomNum(1000,3000);
@@ -24,17 +23,19 @@ setInterval(carros2,intervalo2);
 setInterval(carros3,intervalo3);
 setInterval(carros4,intervalo4);
 
+function mostrarRana()
+{
+    ranita.dibujarRana(ctx);
+}
+
 function lilypad()
 {
-    lilypads.push(new Nenufar(0,150,0,0,50,50,"darkgreen"));
-    lilypads.push(new Nenufar(200,150,0,0,50,50,"darkgreen"));
-    lilypads.push(new Nenufar(250,150,0,0,50,50,"darkgreen"));
-    lilypads.push(new Nenufar(450,150,0,0,50,50,"darkgreen"));
-    lilypads.push(new Nenufar(550,150,0,0,50,50,"darkgreen"));
-    for (let i = 0; i < lilypads.length; i++) 
-        {
-            lilypads[i].dibujar(ctx);                   
-        }
+    lilypads.push(new Nenufar(55,55,0,0,40,40,"darkgreen"));
+    lilypads.push(new Nenufar(155,55,0,0,40,40,"darkgreen"));
+    lilypads.push(new Nenufar(255,55,0,0,40,40,"darkgreen"));
+    lilypads.push(new Nenufar(355,55,0,0,40,40,"darkgreen"));
+    lilypads.push(new Nenufar(455,55,0,0,40,40,"darkgreen"));
+    lilypads.push(new Nenufar(555,55,0,0,40,40,"darkgreen"));
 }
 
 function carros1()
@@ -76,13 +77,12 @@ function animar()
         {
             lilypads[i].dibujar(ctx);                   
         }
-    ranita.dibujar(ctx);
+    mostrarRana();
     window.requestAnimationFrame(animar);
 }
 
 function mover(e)
     {
-        ctx.clearRect(0,0,w,h);
         switch(e.key)
         {
             case "ArrowUp" : 
@@ -101,15 +101,6 @@ function mover(e)
                 ranita.moverIzquierda();
                 break;
         }
-        for (let i = 0; i < carros.length; i++) 
-        {
-            carros[i].dibujar(ctx);                   
-        }
-        for (let i = 0; i < lilypads.length; i++) 
-        {
-            lilypads[i].dibujar(ctx);                   
-        }
-        ranita.dibujar(ctx);
     }
 
 function randomNum(min,max)
