@@ -45,7 +45,7 @@ class Rana extends Rectangulo
     dibujarRana(ctx)
     {
         let img = new Image();
-        img.src = "images/ranita.png";
+        img.src = "css/images/ranita.png";
             ctx.drawImage(img,super.x,super.y);
             ctx.beginPath();
             ctx.fillStyle = img;
@@ -69,12 +69,12 @@ class Rana extends Rectangulo
         }
     }
 
-    juegocompletado()
+    juegoCompletado()
     {
         let respuesta;
-        if ((this.#posicionx < 450)&&
-            (this.#posicionx > 350)&&
-            (this.#posiciony < 100))
+        if ((this.#posicionx < 350)&&
+            (this.#posicionx > 250)&&
+            (this.#posiciony < 50))
         {
             respuesta = true;
         }

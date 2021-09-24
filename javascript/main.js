@@ -1,3 +1,10 @@
+window.addEventListener("load", main);
+
+
+
+function main()
+{
+
 let miCanvas = document.getElementById("miCanvas");
 let ctx = miCanvas.getContext("2d");
 let w = miCanvas.clientWidth;
@@ -17,12 +24,26 @@ let intervalo1 = randomNum(1000,3000);
 let intervalo2 = randomNum(1000,3000);
 let intervalo3 = randomNum(1000,3000);
 let intervalo4 = randomNum(1000,3000);
-
+let intervalo5 = randomNum(1000,3000);
+let intervalo6 = randomNum(1000,3000);
+let intervalo7 = randomNum(1000,3000);
+let intervalo8 = randomNum(1000,3000);
 setInterval(carros1,intervalo1);
 setInterval(carros2,intervalo2);
 setInterval(carros3,intervalo3);
 setInterval(carros4,intervalo4);
+setInterval(carros5,intervalo5);
+setInterval(carros6,intervalo6);
+setInterval(carros7,intervalo7);
+setInterval(carros8,intervalo8);
 
+function ganar()
+{
+    if(ranita.juegoCompletado())
+    {
+        alert("Juego Completado");
+    }
+}
 
 function mostrarRana()
 {
@@ -41,26 +62,50 @@ function lilypad()
 
 function carros1()
 {
-    let dx = randomNum(4,7);
+    let dx = randomNum(3,5);
     carros.push(new Carro(0,355,dx,0,100,40,"black"));
 }
 
 function carros2()
 {
-    let dx = randomNum(4,7);
+    let dx = randomNum(3,7);
     carros.push(new Carro(0,405,dx,0,100,40,"darkgreen"));
 }
 
 function carros3()
 {
-    let dx = randomNum(4,7);
+    let dx = randomNum(3,5);
     carros.push(new Carro(0,455,dx,0,100,40,"black"));
 }
 
 function carros4()
 {
-    let dx = randomNum(4,7);
+    let dx = randomNum(3,5);
     carros.push(new Carro(0,505,dx,0,100,40,"brown"));
+}
+
+function carros5()
+{
+    let dx = randomNum(5,8);
+    carros.push(new Carro(0,105,dx,0,100,40,"blue"));
+}
+
+function carros6()
+{
+    let dx = randomNum(5,8);
+    carros.push(new Carro(0,155,dx,0,100,40,"purple"));
+}
+
+function carros7()
+{
+    let dx = randomNum(5,8);
+    carros.push(new Carro(0,205,dx,0,100,40,"brown"));
+}
+
+function carros8()
+{
+    let dx = randomNum(5,8);
+    carros.push(new Carro(0,255,dx,0,100,40,"white"));
 }
 
 function animar()
@@ -87,6 +132,7 @@ function animar()
         }
     document.getElementById("vidas").value = ranita.vidas;
     mostrarRana();
+    ganar();
     window.requestAnimationFrame(animar);
 }
 
@@ -120,3 +166,5 @@ function randomNum(min,max)
         n2 = Math.floor((n1 * (max - min) + min));
         return n2;
     }
+
+}
