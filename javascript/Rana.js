@@ -57,11 +57,12 @@ class Rana extends Rectangulo
 
     morir()
     {
-        if(this.#vidas > 0)
+        if(this.#vidas > 1)
         {
             this.#vidas = this.#vidas - 1;
             super.x = 250;
             super.y = 550;
+            window.alert("Se ha perdido una vida")
         }
 
         else
@@ -75,7 +76,7 @@ class Rana extends Rectangulo
 
     juegoCompletado()
     {
-        super.x = 250;
+            super.x = 250;
             super.y = 550;
             window.alert("Juego Completado")
             location.reload();

@@ -1,7 +1,6 @@
 window.addEventListener("load", main);
 
 
-
 function main()
 {
 
@@ -14,13 +13,6 @@ let ranita = new Rana(250,550,50,50);
 let casa = new Rectangulo(250,0,0,0,100,50,"Brown")
 let carros = new Array();
 let lilypads = new Array();
-window.requestAnimationFrame(animar);
-body.addEventListener("keydown",mover);
-carros1();
-carros2();
-carros3();
-carros4();
-lilypad();
 let intervalo1 = randomNum(1000,3000);
 let intervalo2 = randomNum(1000,3000);
 let intervalo3 = randomNum(1000,3000);
@@ -29,6 +21,14 @@ let intervalo5 = randomNum(1000,3000);
 let intervalo6 = randomNum(1000,3000);
 let intervalo7 = randomNum(1000,3000);
 let intervalo8 = randomNum(1000,3000);
+window.requestAnimationFrame(animar);
+body.addEventListener("keydown",mover);
+carros1();
+carros2();
+carros3();
+carros4();
+lilypad();
+
 setInterval(carros1,intervalo1);
 setInterval(carros2,intervalo2);
 setInterval(carros3,intervalo3);
