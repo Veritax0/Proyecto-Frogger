@@ -75,4 +75,16 @@ class Rectangulo extends Punto
         ctx.strokeRect(super.x,super.y,this.#ancho,this.#alto);
         ctx.closePath();
     }
+
+    dibujarCasa(ctx)
+    {
+        let img = new Image();
+        img.src = "css/images/casa.png";
+            ctx.drawImage(img,super.x,super.y);
+            ctx.beginPath();
+            ctx.fillStyle = img;
+            ctx.fillRect(super.x,super.y,this.#ancho,this.#alto);
+            ctx.strokeRect(super.x,super.y,this.#ancho,this.#alto);
+            ctx.closePath();
+    }
 }
