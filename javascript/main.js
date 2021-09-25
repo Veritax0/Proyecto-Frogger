@@ -37,6 +37,29 @@ setInterval(carros6,intervalo6);
 setInterval(carros7,intervalo7);
 setInterval(carros8,intervalo8);
 
+function colisiones()
+{
+    for (let i = 0; i < carros.length; i++)
+    {
+        carros[i].limiteIzq;
+        carros[i].limiteDer;
+        carros[i].limiteArriba;
+        carros[i].limiteAbajo;
+        ranita.limiteIzq;
+        ranita.limiteDer;
+        ranita.limiteArriba;
+        ranita.limiteAbajo;
+
+        if((carros[i].limiteIzq    < ranita.limiteDer) &&
+        (carros[i].limiteDer    > ranita.limiteIzq) &&
+        (carros[i].limiteArriba < ranita.limiteAbajo) &&  
+        (carros[i].limiteAbajo  > ranita.limiteArriba))
+        {
+            alert('colision');
+        }
+    }
+}
+
 function ganar()
 {
     if(ranita.juegoCompletado())
@@ -115,13 +138,6 @@ function animar()
         {
             carros[i].animar();                   
         }
-    for (let i = 0; i < carros.length; i++)
-    {
-        if(carros[i].colisionar(ranita))
-        {
-            ranita.morir();
-        }
-    }
     for (let i = 0; i < carros.length; i++) 
         {
             carros[i].dibujar(ctx);                   
@@ -132,7 +148,7 @@ function animar()
         }
     document.getElementById("vidas").value = ranita.vidas;
     mostrarRana();
-    ganar();
+    colisiones();
     window.requestAnimationFrame(animar);
 }
 
