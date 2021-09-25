@@ -4,12 +4,12 @@ class Rana extends Rectangulo
     #posicionx
     #posiciony
 
-    constructor(x,y,ancho,alto,imagenRelleno)
+    constructor(x,y,ancho,alto)
     {
-        super(x,y,ancho,alto,imagenRelleno);
+        super(x,y,ancho,alto);
         this.#vidas = 3;
-        this.#posicionx = 400;
-        this.#posiciony = 790;
+        this.#posicionx = super.x;
+        this.#posiciony = super.y;
     }
 
     get vidas() 
@@ -60,10 +60,14 @@ class Rana extends Rectangulo
         if(this.#vidas > 0)
         {
             this.#vidas = this.#vidas - 1;
+            super.x = 250;
+            super.y = 550;
         }
 
         else
         {
+            super.x = 250;
+            super.y = 550;
             window.alert("Game Over")
             location.reload();
         }
@@ -71,16 +75,9 @@ class Rana extends Rectangulo
 
     juegoCompletado()
     {
-        let respuesta;
-        if ((this.#posicionx < 350)&&
-            (this.#posicionx > 250)&&
-            (this.#posiciony < 50))
-        {
-            respuesta = true;
-        }
-        else
-        {
-            respuesta = false;
-        }
+        super.x = 250;
+            super.y = 550;
+            window.alert("Juego Completado")
+            location.reload();
     }
 }

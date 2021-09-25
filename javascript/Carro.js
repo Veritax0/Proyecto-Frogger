@@ -4,4 +4,5 @@ class Carro extends Rectangulo
     {
         super(x,y,vx,vy,ancho,alto,imagenRelleno);
     }
+
 }

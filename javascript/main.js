@@ -10,7 +10,8 @@ let ctx = miCanvas.getContext("2d");
 let w = miCanvas.clientWidth;
 let h = miCanvas.clientHeight;
 let body = document.getElementById("body");
-let ranita = new Rana(250,550,50,50,"red");
+let ranita = new Rana(250,550,50,50);
+let casa = new Rectangulo(250,0,0,0,100,50,"Brown")
 let carros = new Array();
 let lilypads = new Array();
 window.requestAnimationFrame(animar);
@@ -50,21 +51,24 @@ function colisiones()
         ranita.limiteArriba;
         ranita.limiteAbajo;
 
-        if((carros[i].limiteIzq    < ranita.limiteDer) &&
-        (carros[i].limiteDer    > ranita.limiteIzq) &&
-        (carros[i].limiteArriba < ranita.limiteAbajo) &&  
-        (carros[i].limiteAbajo  > ranita.limiteArriba))
+        let diferencia = Math.abs(carros[i].limiteArriba - ranita.limiteArriba);
+        if((carros[i].limiteIzq < ranita.x)&&
+        (carros[i].limiteDer > ranita.x)&&
+        (diferencia < 45))
         {
-            alert('colision');
+            ranita.morir();
         }
     }
 }
 
 function ganar()
 {
-    if(ranita.juegoCompletado())
+    let diferencia = Math.abs(ranita.limiteArriba - casa.limiteArriba);
+    if((casa.limiteIzq < ranita.x)&&
+        (casa.limiteDer > ranita.x)&&
+        (diferencia < 45))
     {
-        alert("Juego Completado");
+        ranita.juegoCompletado();
     }
 }
 
@@ -73,14 +77,19 @@ function mostrarRana()
     ranita.dibujarRana(ctx);
 }
 
+function mostrarCasa()
+{
+    casa.dibujar(ctx);
+}
+
 function lilypad()
 {
-    lilypads.push(new Nenufar(55,55,0,0,40,40,"darkgreen"));
-    lilypads.push(new Nenufar(155,55,0,0,40,40,"darkgreen"));
-    lilypads.push(new Nenufar(255,55,0,0,40,40,"darkgreen"));
-    lilypads.push(new Nenufar(355,55,0,0,40,40,"darkgreen"));
-    lilypads.push(new Nenufar(455,55,0,0,40,40,"darkgreen"));
-    lilypads.push(new Nenufar(555,55,0,0,40,40,"darkgreen"));
+    lilypads.push(new Nenufar(5,55,0,0,40,40,"darkgreen"));
+    lilypads.push(new Nenufar(105,55,0,0,40,40,"darkgreen"));
+    lilypads.push(new Nenufar(205,55,0,0,40,40,"darkgreen"));
+    lilypads.push(new Nenufar(305,55,0,0,40,40,"darkgreen"));
+    lilypads.push(new Nenufar(405,55,0,0,40,40,"darkgreen"));
+    lilypads.push(new Nenufar(505,55,0,0,40,40,"darkgreen"));
 }
 
 function carros1()
@@ -91,8 +100,8 @@ function carros1()
 
 function carros2()
 {
-    let dx = randomNum(3,7);
-    carros.push(new Carro(0,405,dx,0,100,40,"darkgreen"));
+    let dx = randomNum(3,5);
+    carros.push(new Carro(0,405,dx,0,50,40,"darkgreen"));
 }
 
 function carros3()
@@ -104,7 +113,7 @@ function carros3()
 function carros4()
 {
     let dx = randomNum(3,5);
-    carros.push(new Carro(0,505,dx,0,100,40,"brown"));
+    carros.push(new Carro(0,505,dx,0,50,40,"brown"));
 }
 
 function carros5()
@@ -116,7 +125,7 @@ function carros5()
 function carros6()
 {
     let dx = randomNum(5,8);
-    carros.push(new Carro(0,155,dx,0,100,40,"purple"));
+    carros.push(new Carro(0,155,dx,0,50,40,"purple"));
 }
 
 function carros7()
@@ -128,7 +137,7 @@ function carros7()
 function carros8()
 {
     let dx = randomNum(5,8);
-    carros.push(new Carro(0,255,dx,0,100,40,"white"));
+    carros.push(new Carro(0,255,dx,0,50,40,"white"));
 }
 
 function animar()
@@ -148,7 +157,9 @@ function animar()
         }
     document.getElementById("vidas").value = ranita.vidas;
     mostrarRana();
+    mostrarCasa();
     colisiones();
+    ganar();
     window.requestAnimationFrame(animar);
 }
 
