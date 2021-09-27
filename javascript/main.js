@@ -95,31 +95,31 @@ function lilypad()
 function carros1()
 {
     let dx = randomNum(3,5);
-    carros.push(new Carro(0,355,dx,0,100,40,"black"));
+    carros.push(new Carro(0,355,dx,0,100,40,"violet"));
 }
 
 function carros2()
 {
     let dx = randomNum(3,5);
-    carros.push(new Carro(0,405,dx,0,50,40,"darkgreen"));
+    carros.push(new Carro(0,405,dx,0,50,40,"yellow"));
 }
 
 function carros3()
 {
     let dx = randomNum(3,5);
-    carros.push(new Carro(0,455,dx,0,100,40,"black"));
+    carros.push(new Carro(0,455,dx,0,100,40,"red"));
 }
 
 function carros4()
 {
     let dx = randomNum(3,5);
-    carros.push(new Carro(0,505,dx,0,50,40,"brown"));
+    carros.push(new Carro(0,505,dx,0,50,40,"cyan"));
 }
 
 function carros5()
 {
     let dx = randomNum(5,8);
-    carros.push(new Carro(0,105,dx,0,100,40,"blue"));
+    carros.push(new Carro(0,105,dx,0,100,40,"pink"));
 }
 
 function carros6()
@@ -131,7 +131,7 @@ function carros6()
 function carros7()
 {
     let dx = randomNum(5,8);
-    carros.push(new Carro(0,205,dx,0,100,40,"brown"));
+    carros.push(new Carro(0,205,dx,0,100,40,"blue"));
 }
 
 function carros8()

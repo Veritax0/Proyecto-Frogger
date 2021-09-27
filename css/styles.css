@@ -1,9 +1,15 @@
 body{
-    background-color: rgb(255, 249, 240);
+    background-color: rgb(243, 247, 250);
     text-align: center;
+    font-family: Arial;
+  color: rgb(21, 54, 15);
+  font-size: 13px;
+
 }
 
+
+
 #miCanvas{
-    border: 5px solid black;
+    border: 2px solid black;
     background-image: url("images/mapa.jpg");
 }
